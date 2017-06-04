@@ -1,0 +1,75 @@
+@import 'property.css';
+@import 'varible.css';
+
+//一定要记得引入啊啊啊啊啊啊啊啊!!!!!!!
+
+//因为给的是iphone6的设计稿，iphone6的视觉稿宽度是375，把整个页面分成10份
+//这个函数是传入像素值时自动给我们转化为rem
+.fs(@px){
+  font-size:unit(@px / 37.5 , rem);
+}
+
+.w(@px){
+  width:unit(@px / 37.5 , rem);
+}
+
+.h(@px){
+  height:unit(@px / 37.5 , rem);
+}
+//行高
+.lh(@px){
+  line-height:unit(@px / 37.5 , rem);
+}
+
+//margin值
+.mt(@px){
+  margin-top: unit(@px / 37.5 , rem);
+}
+.mr(@px){
+  margin-right: unit(@px / 37.5 , rem);
+}
+.mb(@px){
+  margin-bottom: unit(@px / 37.5 , rem);
+}
+.ml(@px){
+  margin-left: unit(@px / 37.5 , rem);
+}
+
+//mpadding值
+.pt(@px){
+  padding-top: unit(@px / 37.5 , rem);
+}
+.pr(@px){
+  padding-right: unit(@px / 37.5 , rem);
+}
+.pb(@px){
+  padding-bottom: unit(@px / 37.5 , rem);
+}
+.pl(@px){
+  padding-left: unit(@px / 37.5 , rem);
+}
+html,body{
+  height:100%;
+  width:100%;
+  margin: 0;
+}
+
+//去掉按钮的外边框
+button{
+  outline-width: 0;
+  border-width: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    border: 0;
+}
+
+input {
+    outline:none;
+}
+
+

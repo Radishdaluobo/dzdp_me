@@ -1,0 +1,31 @@
+@import '../../static/css/property.less';
+@import '../../static/css/variable.less';
+
+#home-header{
+    color:@defaultColor;
+    .h(48);
+    .lh(48);
+    padding:0 7px;
+    background:@headBgColor;
+    overflow: hidden;
+    .home-header-left{
+        width:18%;
+    }
+    .home-header-middle{
+        width:73%;
+        color:@muteColor;
+        input{
+            border-radius: 18px;
+            width:100%;
+            .pl(30);
+            .h(26);
+        }
+        .icon-search{
+            left:11px;
+            top:18px; 
+        }
+    }
+    .home-header-right{
+        width:9%;
+    }
+}

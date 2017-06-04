@@ -3,10 +3,12 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { hashHistory } from 'react-router'
 import configureStore from './store/configureStore'
-
-import './static/css/common.less'
+import style from './static/js/style'
+style()
+import './static/css/index.less'
 import './static/css/font.css'
 
+style()
 // 创建 Redux 的 store 对象
 const store = configureStore()
 
