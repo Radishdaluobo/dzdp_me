@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import HomeHeader from '../../components/HomeHeader'
 import Category from '../../components/Category'
 import Ad from './subpage/ad'
+import List from './subpage/List'
 
 class Home extends React.Component {
     constructor(props, context) {
@@ -18,13 +19,13 @@ class Home extends React.Component {
                 <Category />
                 <div style={{height:'15px'}}></div>
                 <Ad />
+                <List cityName={this.props.userinfo.cityName}/>
             </div>
         )
     }
 }
 
 function mapStateToProps(state) {
-    console.log(state);
     return {
         userinfo:state.userinfo
     }

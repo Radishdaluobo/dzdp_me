@@ -1,9 +1,9 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
-import { getAdData } from '../../../fetch/home/home'
-import HomeAd from '../../../components/HomeAd'
+import { getListData } from '../../../fetch/home/home'
+import ListCompoent from '../../../components/List'
 
-class Ad extends React.Component {
+class List extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
@@ -14,16 +14,18 @@ class Ad extends React.Component {
     render() {
         return (
             <div>
+                <h2 className="home-list-title">猜你喜欢</h2>
                 {
-                    this.state.data.length 
-                    ? <HomeAd data={this.state.data} />
-                    : <div>加载中</div>
+                    this.state.data.length
+                    ? <ListCompoent data={this.state.data}/>
+                    : <div>{/* 加载中... */}</div>
                 }
             </div>
         )
     }
     componentDidMount(){
-        const result = getAdData();
+        const cityName = this.props.cityName;
+        const result = getListData(cityName,1);
         result.then((res) => {
             return res.json()
         }).then((json) => {
@@ -41,4 +43,4 @@ class Ad extends React.Component {
     }
 }
 
- export default Ad
+ export default List

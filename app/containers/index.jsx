@@ -35,7 +35,6 @@ class App extends React.Component {
         this.props.userInfoActions.update({
             cityName: cityName
         })
-        console.log(111);
         // 更改状态
         this.setState({
             initDone: true
