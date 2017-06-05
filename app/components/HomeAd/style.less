@@ -1,0 +1,25 @@
+@import '../../static/css/property.less';
+@import '../../static/css/variable.less';
+
+#home-ad{
+   background:@defaultColor;
+   .ad_title{
+       .fs(16);
+       padding:8px 0 8px 10px;
+       margin:0;
+       font-weight:normal;
+       border-bottom:1px solid @lineColor;
+   } 
+   .ad-container{
+       width:100%;
+        .ad_item{
+            width:33.33%;
+            height:140px;
+            overflow:hidden;
+            img{
+                width:100%;
+                height:100%;//这里要img去适应li,所以li要定宽高
+            }
+        }
+    }
+}

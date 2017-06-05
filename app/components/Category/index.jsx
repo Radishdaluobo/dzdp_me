@@ -71,9 +71,9 @@ class Category extends React.Component {
                 </ReactSwipe>
                 <div className="index-container">
                     <ul>
-                        <li className="f-l">1</li>
-                        <li className="f-l">1</li>
-                        <li className="f-l">1</li>
+                        <li className={this.state.index === 0 ? 'active' : ''}></li>
+                        <li className={this.state.index === 1 ? 'active' : ''}></li>
+                        <li className={this.state.index === 2 ? 'active' : ''}></li>
                     </ul>
                 </div>
             </div>

@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import LocalStore from '../util/localStore'
 import { CITYNAME } from '../config/localStoreKey'
-import * as userInfoActionsFromOtherFile from '../actions/userinfo' 
+import * as userInfoActionsFromOtherFile from '../actions/userinfo.js' 
 
 class App extends React.Component {
     constructor(props, context) {
@@ -35,7 +35,7 @@ class App extends React.Component {
         this.props.userInfoActions.update({
             cityName: cityName
         })
-
+        console.log(111);
         // 更改状态
         this.setState({
             initDone: true
