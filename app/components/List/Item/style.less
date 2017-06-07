@@ -1,2 +1,30 @@
 @import '../../../static/css/property.less';
 @import '../../../static/css/variable.less';
+
+.item{
+    border-bottom:1px solid @lineColor;
+    padding:10px;
+    .item-img{
+        width:35%;
+        img{
+            width:100%;
+        }
+    }
+    .item-info{
+        width:65%;
+        .pl(10);
+        .item-info-title{
+            .fs(16);
+            font-weight:normal;
+            .mt(0);
+            margin-bottom:8px;
+        }
+        p{
+            .fs(14);
+            margin:8px 0 8px 0; 
+            .price{
+                color:@headBgColor;
+            }
+        }
+    }
+}

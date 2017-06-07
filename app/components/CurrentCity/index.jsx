@@ -1,23 +1,19 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import './style.less'
-import Item from './Item/index'
 
-class ListComponent extends React.Component {
+class CurrentCity extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     }
     render() {
         return (
-            <div className="list-container">
-                {this.props.data.map((item,index) => {
-                    return <Item key={index} data={item} />
-                })}
+            <div id="current-city" className="te-c">
+                <p>{this.props.cityName}</p>
             </div>
         )
     }
-
 }
 
- export default ListComponent
+export default CurrentCity

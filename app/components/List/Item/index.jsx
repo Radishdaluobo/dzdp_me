@@ -9,15 +9,19 @@ class Item extends React.Component {
     }
     render() {
         return (
-            <div>
-                <img src="http://images2015.cnblogs.com/blog/138012/201610/138012-20161016201638030-473660627.png" alt=""/>
-                <h3>汉堡大人<span>120m</span></h3>
-                <p>叫我汉堡大人,还你多彩口味</p>
-                <p><b>¥28</b><span>已售28</span></p>
+            <div className="item clear-fix">
+                <div className="item-img f-l">
+                    <img src={this.props.data.img} alt=""/>
+                </div>
+                <div className="item-info f-l">
+                    <h3 className="item-info-title">{this.props.data.title}<span className="f-r">{this.props.data.distance}m</span></h3>
+                    <p>{this.props.data.subTitle}</p>
+                    <p><b className="price">¥{this.props.data.price}</b><span className="f-r">已售{this.props.data.mumber}</span></p>
+                </div>
             </div>
         )
     }
 
 }
 
- export default Item
+export default Item

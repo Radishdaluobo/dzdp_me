@@ -1,0 +1,25 @@
+@import '../../static/css/property.less';
+@import '../../static/css/variable.less';
+
+#common-header{
+    .h(48);
+    .lh(48);
+    color:@defaultColor;
+    padding:0 7px;
+    background:@headBgColor;
+    overflow: hidden;
+    position: relative;
+    .icon-chevron-left{
+        .w(30);
+        .h(30);
+        position: absolute;
+        left:unit(10 / 37.5 , rem);
+        top:unit(15/ 37.5 , rem);
+    }
+    .common-header-title{
+        .fs(20);
+        margin:0;
+        font-weight: normal;
+    }
+    
+}
