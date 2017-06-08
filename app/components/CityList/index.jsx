@@ -12,15 +12,18 @@ class CityList extends React.Component {
             <div id="city-list">
                 <h3 className="city-list-title">热门城市</h3>
                 <ul className="clear-fix">
-                    <li className="city-list-item"><a>北京</a></li>
-                    <li className="city-list-item"><a>北京</a></li>
-                    <li className="city-list-item"><a>北京</a></li>
-                    <li className="city-list-item"><a>北京</a></li>
-                    <li className="city-list-item"><a>北京</a></li>
-                    <li className="city-list-item"><a>北京</a></li>
+                    {this.props.cityList.map((item,index) =>{
+                        return <li className="city-list-item" key={item.id} onClick={this.clickHandle.bind(this,item.cityName)}>
+                            <a>{item.cityName}</a>
+                        </li>
+                    })}
                 </ul>
             </div>
         )
+    }
+    clickHandle(newCity){
+        const changeFn = this.props.changeCityFn;
+        changeFn(newCity);
     }
 }
 

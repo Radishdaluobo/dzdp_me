@@ -34,11 +34,11 @@ router.get('/api/homelist/:city/:page', function*(next) {
 });
 
 // 城市 —— 城市列表
-var homeAdData = require('./city/cityList.js')
+var cityListData = require('./city/cityList.js')
 router.get('/api/cityList', function*(next) {
     console.log('城市—— 城市列表')
 
-    this.body = homeAdData
+    this.body = cityListData
 });
 
 
