@@ -1,5 +1,6 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
+import SearchHeader from '../../components/SearchHeader'
 
 class Search extends React.Component {
     constructor(props, context) {
@@ -9,7 +10,7 @@ class Search extends React.Component {
     render() {
         return (
             <div>
-                <h1>Search</h1>
+                <SearchHeader />
             </div>
         )
     }
@@ -17,4 +18,4 @@ class Search extends React.Component {
 
 // 使用 require.ensure 异步加载，还不支持 ES6 的 export 
 // export default Search
-module.exports = Search
+export default Search
