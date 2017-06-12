@@ -1,9 +1,9 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
-import Header from '../../components/Header'
-import Info from './subpage/info'
+import DetailInfo from '../../../components/DetailInfo'
 
-class Detail extends React.Component {
+
+class Info extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
@@ -11,11 +11,10 @@ class Detail extends React.Component {
     render() {
         return (
             <div>
-                <Header pageTitle="商户详情" />
-                <Info />
+                <DetailInfo />
             </div>
         )
     }
 }
 
-export default Detail
+export default Info
