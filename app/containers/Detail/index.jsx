@@ -9,10 +9,11 @@ class Detail extends React.Component {
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     }
     render() {
+        const params = this.props.params
         return (
             <div>
                 <Header pageTitle="商户详情" />
-                <Info />
+                <Info id={params.id}/>
             </div>
         )
     }
