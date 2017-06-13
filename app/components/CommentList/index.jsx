@@ -1,5 +1,7 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
+import Item from './Item/index'
+
 import './style.less'
 
 class Star extends React.Component {
@@ -8,9 +10,12 @@ class Star extends React.Component {
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     }
     render() {
+        const data=this.props.data;
         return (
             <div className="comment">
-               pinglun
+               {data.map((item,index) => {
+                    return <Item key={index} data={item} />
+               })}
             </div>
         )
     }

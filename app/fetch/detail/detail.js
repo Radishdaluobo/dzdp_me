@@ -6,6 +6,6 @@ export function getDetailInfo(id) {
 }
 
 export function getCommentList(page, id) {
-    const result = get('/api/detail/comment/' + page + id)
+    const result = get('/api/detail/comment/' + page + '/' + id)
     return result
 }
