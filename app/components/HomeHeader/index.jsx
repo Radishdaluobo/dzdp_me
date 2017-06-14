@@ -21,9 +21,11 @@ class HomeHeader extends React.Component {
                          <i className="icon-angle-down"></i>
                     </div>
                 </Link>
-                <div className="home-header-right f-r te-c">
-                    <i className="icon-user"></i>
-                </div>
+                <Link to="/login">
+                    <div className="home-header-right f-r te-c">
+                        <i className="icon-user"></i>
+                    </div>
+                </Link>
                 <div className="home-header-middle p-r f-l">
                     <i className="p-a icon-search"></i>
                     {/*<input type="text" placeholder="请输入关键字" />*/}

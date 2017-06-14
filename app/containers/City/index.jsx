@@ -42,7 +42,7 @@ class City extends React.Component {
         this.props.userInfoActions.update(userinfo)    
 
         //修改cookie
-        localStorage.setItem(CITYNAME,newCity)
+        LocalStore.setItem(CITYNAME,newCity)
 
         //跳转页面
         hashHistory.push('/')    

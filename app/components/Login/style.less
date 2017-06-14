@@ -1,0 +1,53 @@
+@import '../../static/css/property.less';
+@import '../../static/css/variable.less';
+
+.login {
+    //background:url('../../static/img/bg.jpg');
+    //background-repeat: no-repeat;
+    //background-size: 100% 100%;
+    // position: fixed;
+    // left:0;
+    // top:0;
+    // right:0;
+    // bottom:0;
+    // z-index:-1;
+    color:@muteColor;
+    .login-container{
+        margin:0 auto;
+        .mt(230);
+        width:80%;
+        .login-form{
+            width:100%;
+            position:relative;
+            i{
+                color:@warnColor;
+                position:absolute;
+                left:8px;
+                top:8px;
+            }
+            input{
+                display:inline-block;
+                .mb(15);
+                .h(30);
+                .pl(30);
+                width:100%;
+                background: rgba(0,0,0,0.3);
+                border-radius:3px;
+            }
+            .checkCode{
+                color:@warnColor;
+                position:absolute;
+                right:8px;
+                top:4px;
+            }
+        }
+    }
+    .loginBtn{
+        .mt(15);
+        width:100%;
+        padding:8px 0;
+        border-radius:3px;
+        background:@warnColor;
+        color:@defaultColor;
+    }
+}
