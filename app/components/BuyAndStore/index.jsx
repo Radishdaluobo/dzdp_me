@@ -11,9 +11,9 @@ class BuyAndStore extends React.Component {
     }
     render() {
         return (
-            <div id="buy-store">
-                <button onClick={this}>收藏</button>
-                <button onClick={this}>购买</button>
+            <div className="buy-store te-c">
+                <button>收藏</button>
+                <button>购买</button>
             </div>
         )
     }
