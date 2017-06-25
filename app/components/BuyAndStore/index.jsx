@@ -12,10 +12,16 @@ class BuyAndStore extends React.Component {
     render() {
         return (
             <div className="buy-store te-c">
-                <button>收藏</button>
-                <button>购买</button>
+                <button onClick={this.storeHandle.bind(this)}>收藏</button>
+                <button onClick={this.buyHandle.bind(this)}>购买</button>
             </div>
         )
+    }
+    storeHandle(){
+        this.props.storeHandle()
+    }
+    buyHandle(){
+        this.props.buyHandle()
     }
 }
 
