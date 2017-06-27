@@ -30,16 +30,16 @@ class Buy extends React.Component {
     checkStoreState(){
         const id  = this.props.id;
         const store = this.props.store;  
-        console.log(store); 
-        // store.forEach( item => {
-        //     if(item.id === id){
-        //         //已被收藏
-        //         this.setState({
-        //             isStore: true
-        //         })
-        //         return false
-        //     }
-        // }) 
+        console.log('检验是否被收藏',store); 
+        store.forEach( item => {
+            if(item.id === id){
+                //已被收藏
+                this.setState({
+                    isStore: true
+                })
+                return false
+            }
+        }) 
     }
     loginCheck(){
         const id = this.props.id;
@@ -73,14 +73,14 @@ class Buy extends React.Component {
             return
         }
         const id = this.props.id;
-        const storeActions = this.props.storeActions
+        let storeActions = this.props.storeActions
         console.log('storeActions',storeActions)
         if(this.state.isStore){
             storeActions.rm({id: id})
-            console.log('isStore',this.props.store)
+            console.log('rmStore',this.props.store)
         }else{
             storeActions.add({id: id})
-            console.log('isStore',this.props.store)
+            console.log('addStore',this.props.store)
         }
         this.setState({
             isStore: !this.state.isStore        
