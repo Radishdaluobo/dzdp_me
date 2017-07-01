@@ -18,7 +18,7 @@ class SearchHeader extends React.Component {
                     <i className="icon-chevron-left"></i>
                 </span>   
                 <div className="search-header-right p-r f-l">
-                    <i className="p-a icon-search"></i>
+                    <i className="p-a icon-search" ></i>
                     <SearchInput value={this.props.keyword || ''} enterHandle={this.enterHandle.bind(this)}/>
                 </div>          
             </div>

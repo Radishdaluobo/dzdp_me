@@ -1,5 +1,11 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import { hashHistory } from 'react-router'
+import * as storeActionsFromFile from '../../actions/userinfo' 
+import Header from '../../components/Header'
+import Userinfo from '../../components/Userinfo'
 
 class User extends React.Component {
     constructor(props, context) {
@@ -9,10 +15,30 @@ class User extends React.Component {
     render() {
         return (
             <div>
-                <h1>User</h1>
+                <Header pageTitle="用户主页" backRouter="/" />
+                <Userinfo />
             </div>
         )
     }
+    componentDidMount(){
+        if(!this.props.userinfo.userName){
+            hashHistory.push('/Login')
+        }
+    }
 }
 
-module.exports = User
+function mapStateToProps(state) {
+    return {
+        userinfo: state.userinfo
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        storeActions: bindActionCreators(storeActionsFromFile, dispatch)
+    }
+}
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(User)
