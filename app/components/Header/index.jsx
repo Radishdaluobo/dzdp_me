@@ -18,6 +18,7 @@ class Header extends React.Component {
         )
     }
     backfn(){
+        //注意这里路由的写法
         const backRouter = this.props.backRouter;
         if(backRouter){
             hashHistory.push(hashHistory)

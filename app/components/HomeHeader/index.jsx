@@ -21,7 +21,7 @@ class HomeHeader extends React.Component {
                          <i className="icon-angle-down"></i>
                     </div>
                 </Link>
-                <Link to="/login">
+                <Link to="/User">
                     <div className="home-header-right f-r te-c">
                         <i className="icon-user"></i>
                     </div>

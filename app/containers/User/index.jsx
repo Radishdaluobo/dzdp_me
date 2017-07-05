@@ -6,6 +6,7 @@ import { hashHistory } from 'react-router'
 import * as storeActionsFromFile from '../../actions/userinfo' 
 import Header from '../../components/Header'
 import Userinfo from '../../components/Userinfo'
+import OrderList from './subpage/OrderList'
 
 class User extends React.Component {
     constructor(props, context) {
@@ -15,13 +16,14 @@ class User extends React.Component {
     render() {
         return (
             <div>
-                <Header pageTitle="用户主页" backRouter="/" />
-                <Userinfo />
+                <Header pageTitle="用户主页" backRouter="/home" />
+                <Userinfo userName={this.props.userinfo.userName} userCity={this.props.userinfo.cityName} />
+                <OrderList />
             </div>
         )
     }
     componentDidMount(){
-        if(!this.props.userinfo.userName){
+        if(!this.props.userinfo.userName){            
             hashHistory.push('/Login')
         }
     }

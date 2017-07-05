@@ -19,6 +19,7 @@ class RouterMap extends React.Component {
             <Router history={this.props.history}>
                 <Route path='/' component={App}>
                     <IndexRoute component={Home}/>
+                    {/*上面一句省略了path='/home'*/}
                     <Route path='/city' component={City}/>
                     <Route path='/User' component={User}/>
                     <Route path='/search/:type(/:keyword)' component={Search}/>
