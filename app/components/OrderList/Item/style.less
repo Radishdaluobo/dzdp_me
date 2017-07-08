@@ -1,0 +1,31 @@
+@import '../../../static/css/property.less';
+@import '../../../static/css/variable.less';
+
+.item{
+    border-bottom:1px solid @lineColor;
+    padding:10px;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    .item-img{
+        width:35%;
+        img{
+            width:100%;
+            vertical-align: middle;
+        }
+    }
+    .item-infomation{
+        width:45%;
+        .pl(10);
+    }
+    .item-commit{
+        width:20%;
+        button{        
+            color:@defaultColor;
+            background-color: @headBgColor;
+            display: inline-block;
+            .w(70);
+            .h(30);
+        }
+    }
+}
