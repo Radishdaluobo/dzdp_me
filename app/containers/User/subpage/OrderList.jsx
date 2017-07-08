@@ -1,5 +1,6 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
+import { getOrderListData } from '../../../fetch/User/orderList'
 // import { getOrderListData, postComment } from '../../../fetch/user/orderlist'
 
 import OrderListComponent from '../../../components/OrderList'
@@ -27,11 +28,27 @@ class OrderList extends React.Component {
         )
     }
     componentDidMount() {
-        
+        const userName = this.props.userName;
+        if(userName){
+            this.loadOrderList(userName)
+        }
     }
     // 获取列表数据
-    loadOrderList() {
-        
+    loadOrderList(userName) {
+        const result = getOrderListData(userName);
+        console.log('orderlist',result);
+        result.then((res)=>{
+            return res.json()
+        }).then((json)=>{
+            console.log('data',json)
+            this.setState({
+                data:json
+            })
+        }).catch(ex => {
+            if(__DEV__){
+                console.error('订单列表模块获取数据出错',ex.message)
+            }
+        })
     }
     // 提交评价
     submitComment() {

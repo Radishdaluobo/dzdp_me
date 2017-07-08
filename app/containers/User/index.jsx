@@ -18,7 +18,7 @@ class User extends React.Component {
             <div>
                 <Header pageTitle="用户主页" backRouter="/home" />
                 <Userinfo userName={this.props.userinfo.userName} userCity={this.props.userinfo.cityName} />
-                <OrderList />
+                <OrderList userName={this.props.userinfo.userName}/>
             </div>
         )
     }
