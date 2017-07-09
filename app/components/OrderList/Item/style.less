@@ -1,8 +1,13 @@
 @import '../../../static/css/property.less';
 @import '../../../static/css/variable.less';
 
+
+
+.item-container{
+    .pb(30);
+    border-bottom:1px solid @lineColor;    
+}
 .item{
-    border-bottom:1px solid @lineColor;
     padding:10px;
     display:flex;
     justify-content:center;
@@ -27,5 +32,28 @@
             .w(70);
             .h(30);
         }
+        & .hasCommented{
+            background-color: @lineColor;
+        }
+    }
+}
+.add-comment{
+    .comment-text{
+    width:100%;
+    border:none;
+    border:1px solid @lineColor;
+    .h(100);
+    .mb(10); 
+    }
+     button{        
+    color:@defaultColor;
+    background-color: @headBgColor;
+    display: inline-block;
+    .w(70);
+    .h(30);
+    .mr(20);
+    }
+    & .cancel{
+    background-color: @lineColor;
     }
 }

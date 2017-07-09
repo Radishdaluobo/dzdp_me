@@ -7,11 +7,16 @@ class Item extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+        this.state = {
+            // 0 .未评价,1.评价中,2.已评价
+            commentState: 1
+        }
     }
     render() {
         const data = this.props.data;
         return (
-            <div className="item clear-fix">             
+            <div className="item-container">
+                <div className="item clear-fix">             
                     <div className="item-img f-l">
                         <img src={data.img} alt=""/>
                     </div>
@@ -23,9 +28,22 @@ class Item extends React.Component {
                         </ul>
                     </div>
                     <div className="item-commit f-r">
-                        <button>评价</button>
+                        {this.state.commentState == 0 ? <button>评价</button>
+                        :this.state.commentState == 2 ?<button className="hasCommented">已评价</button>
+                        :''}
                     </div>
+                </div>
+                <div>
+                    {this.state.commentState == 1 ? 
+                    <div className="add-comment">
+                        <textarea className="comment-text"></textarea>
+                        <button>提交</button>
+                        <button className="cancel">取消</button>
+                    </div>
+                    :''}
+                </div>
             </div>
+            
         )
     }
 

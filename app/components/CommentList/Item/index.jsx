@@ -14,7 +14,7 @@ class Item extends React.Component {
     render() {
         const data = this.props.data;
         return (
-            <div className="item clear-fix">
+            <div className="item-comment clear-fix">
                 <div className="item-user">
                     <i className="icon-user"></i>
                     <span>{data.username}</span>
