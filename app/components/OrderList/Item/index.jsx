@@ -9,7 +9,7 @@ class Item extends React.Component {
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
         this.state = {
             // 0 .未评价,1.评价中,2.已评价
-            commentState: 1
+            commentState: 0
         }
     }
     render() {
@@ -28,7 +28,7 @@ class Item extends React.Component {
                         </ul>
                     </div>
                     <div className="item-commit f-r">
-                        {this.state.commentState == 0 ? <button>评价</button>
+                        {this.state.commentState == 0 ? <button onClick={this.commentHandle.bind(this)}>评价</button>
                         :this.state.commentState == 2 ?<button className="hasCommented">已评价</button>
                         :''}
                     </div>
@@ -36,9 +36,9 @@ class Item extends React.Component {
                 <div>
                     {this.state.commentState == 1 ? 
                     <div className="add-comment">
-                        <textarea className="comment-text"></textarea>
-                        <button>提交</button>
-                        <button className="cancel">取消</button>
+                        <textarea className="comment-text" ref="commitText"></textarea>
+                        <button onClick={this.submitHandle.bind(this)}>提交</button>
+                        <button className="cancel" onClick={this.cancelHandle.bind(this)}>取消</button>
                     </div>
                     :''}
                 </div>
@@ -46,7 +46,30 @@ class Item extends React.Component {
             
         )
     }
-
+    commentHandle(){
+        this.setState({
+            commentState: 1
+        })
+    }
+    cancelHandle(){
+        this.setState({
+            commentState: 0
+        })
+    }
+    submitHandle(){ 
+         const submitHandle = this.props.submitComment
+         const id = this.props.data.id;
+         const value = this.refs.commitText.value.trim();
+         if(!value){
+             return
+         }
+         submitHandle(id,value,this.commitOK.bind(this))
+    }
+    commitOK(){
+        this.setState({
+            commentState: 2
+        })
+    }
 }
 
 export default Item

@@ -12,7 +12,7 @@ class OrderListComponent extends React.Component {
         return (
             <div className="list-container">
                 {this.props.data.map((item,index)=>{
-                    return <Item key={index} data={item}/>
+                    return <Item key={index} data={item} submitComment={this.props.submitComment}/>
                 })}
             </div>
         )

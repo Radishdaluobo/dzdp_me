@@ -1,7 +1,6 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
-import { getOrderListData } from '../../../fetch/User/orderList'
-// import { getOrderListData, postComment } from '../../../fetch/user/orderlist'
+import { getOrderListData, postComment } from '../../../fetch/user/orderlist'
 
 import OrderListComponent from '../../../components/OrderList'
 
@@ -51,8 +50,15 @@ class OrderList extends React.Component {
         })
     }
     // 提交评价
-    submitComment() {
-
+    submitComment(id,value,callback) {
+        const result = postComment(id,value);
+        result.then((res)=>{
+            return res.json()
+        }).then((json)=>{
+            if(json.errno == 0){
+                callback()
+            }
+        })
     }
 }
 
