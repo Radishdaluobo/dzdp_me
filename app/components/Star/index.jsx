@@ -20,16 +20,19 @@ class Star extends React.Component {
                 {
                     [1,2,3,4,5].map((item,index) => {
                         const active = starNum >= item ? ' active' : ''
-                        return <i key={index} className={'icon-star' + active} onClick={this.click.bind(this.item)}></i>
+                        return <i key={index} className={'icon-star' + active} onClick={this.clickHandle.bind(this.item)}></i>
                     })
                 }
             </div>
         )
     }
     componentDidMount(){
-        this.setState({
-          starNum: this.props.starNum  
-        })
+        // this.setState({
+        //   starNum: this.props.starNum  
+        // })
+    }
+    clickHandle(){
+        
     }
 
 }
