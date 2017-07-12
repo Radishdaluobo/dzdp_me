@@ -17,7 +17,7 @@ class DetailInfo extends React.Component {
                     <div className="info f-l">
                         <h3 className="title">{data.title}</h3>
                         <div className="star-price">
-                            {/*<Star starNum={data.star} />*/}
+                            <Star starNum={data.star} />
                             <span className="f-r price">{"¥"+data.price}</span>
                         </div>
                         <p>{data.subTitle}}</p>
